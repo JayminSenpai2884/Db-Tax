@@ -63,11 +63,11 @@ const ContactForm = () => {
 
   if (isSubmitted) {
     return (
-      <Card className="glass-card shadow-floating animate-scale-in">
-        <CardContent className="p-8 text-center">
-          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-card-foreground mb-2">Thank You!</h3>
-          <p className="text-muted-foreground mb-6">
+      <Card className="glass-professional rounded-xl animate-scale-in">
+        <CardContent className="p-6 md:p-8 text-center">
+          <CheckCircle className="h-12 w-12 md:h-16 md:w-16 text-green-500 mx-auto mb-4" />
+          <h3 className="text-xl md:text-2xl font-bold text-card-foreground mb-2">Thank You!</h3>
+          <p className="text-muted-foreground mb-6 text-sm md:text-base">
             Your message has been sent successfully. We'll contact you within 24 hours to discuss your needs.
           </p>
           <Button onClick={() => setIsSubmitted(false)} variant="outline">
@@ -79,29 +79,29 @@ const ContactForm = () => {
   }
 
   return (
-    <Card className="glass-card shadow-floating hover-lift animate-fade-up">
+    <Card className="glass-professional rounded-xl animate-fade-up">
       <CardHeader>
-        <CardTitle className="text-2xl text-card-foreground flex items-center gap-3">
-          <Mail className="h-6 w-6 text-primary" />
+        <CardTitle className="text-xl md:text-2xl text-card-foreground flex items-center gap-2 md:gap-3">
+          <Mail className="h-5 w-5 md:h-6 md:w-6 text-primary" />
           Get Your Free Consultation
         </CardTitle>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground text-sm md:text-base">
           Tell us about your business needs and we'll create a customized solution for you.
         </p>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name *</Label>
+              <Label htmlFor="name" className="text-sm md:text-base">Full Name *</Label>
               <Input
                 id="name"
                 {...register("name")}
                 placeholder="Your full name"
-                className="glass border-border/50 focus:border-primary"
+                className="border-border/50 focus:border-primary"
               />
               {errors.name && (
-                <p className="text-sm text-destructive flex items-center gap-1">
+                <p className="text-xs md:text-sm text-destructive flex items-center gap-1">
                   <AlertCircle className="h-3 w-3" />
                   {errors.name.message}
                 </p>
@@ -109,16 +109,16 @@ const ContactForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email Address *</Label>
+              <Label htmlFor="email" className="text-sm md:text-base">Email Address *</Label>
               <Input
                 id="email"
                 type="email"
                 {...register("email")}
                 placeholder="your@email.com"
-                className="glass border-border/50 focus:border-primary"
+                className="border-border/50 focus:border-primary"
               />
               {errors.email && (
-                <p className="text-sm text-destructive flex items-center gap-1">
+                <p className="text-xs md:text-sm text-destructive flex items-center gap-1">
                   <AlertCircle className="h-3 w-3" />
                   {errors.email.message}
                 </p>
@@ -126,17 +126,17 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number *</Label>
+              <Label htmlFor="phone" className="text-sm md:text-base">Phone Number *</Label>
               <Input
                 id="phone"
                 {...register("phone")}
                 placeholder="(123) 456-7890"
-                className="glass border-border/50 focus:border-primary"
+                className="border-border/50 focus:border-primary"
               />
               {errors.phone && (
-                <p className="text-sm text-destructive flex items-center gap-1">
+                <p className="text-xs md:text-sm text-destructive flex items-center gap-1">
                   <AlertCircle className="h-3 w-3" />
                   {errors.phone.message}
                 </p>
@@ -144,12 +144,12 @@ const ContactForm = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="service">Service Needed *</Label>
+              <Label htmlFor="service" className="text-sm md:text-base">Service Needed *</Label>
               <Select onValueChange={(value) => setValue("service", value)} value={selectedService}>
-                <SelectTrigger className="glass border-border/50 focus:border-primary">
+                <SelectTrigger className="border-border/50 focus:border-primary">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
-                <SelectContent className="glass-card border-border/50">
+                <SelectContent className="border-border/50">
                   <SelectItem value="bookkeeping">Bookkeeping</SelectItem>
                   <SelectItem value="payroll">Payroll Services</SelectItem>
                   <SelectItem value="tax-returns">Tax Returns (T1)</SelectItem>
@@ -160,7 +160,7 @@ const ContactForm = () => {
                 </SelectContent>
               </Select>
               {errors.service && (
-                <p className="text-sm text-destructive flex items-center gap-1">
+                <p className="text-xs md:text-sm text-destructive flex items-center gap-1">
                   <AlertCircle className="h-3 w-3" />
                   {errors.service.message}
                 </p>
@@ -169,26 +169,26 @@ const ContactForm = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="business">Business Name (Optional)</Label>
+            <Label htmlFor="business" className="text-sm md:text-base">Business Name (Optional)</Label>
             <Input
               id="business"
               {...register("business")}
               placeholder="Your business name"
-              className="glass border-border/50 focus:border-primary"
+              className="border-border/50 focus:border-primary"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Tell us about your needs *</Label>
+            <Label htmlFor="message" className="text-sm md:text-base">Tell us about your needs *</Label>
             <Textarea
               id="message"
               {...register("message")}
               placeholder="Describe your bookkeeping, tax, or payroll needs..."
               rows={4}
-              className="glass border-border/50 focus:border-primary resize-none"
+              className="border-border/50 focus:border-primary resize-none"
             />
             {errors.message && (
-              <p className="text-sm text-destructive flex items-center gap-1">
+              <p className="text-xs md:text-sm text-destructive flex items-center gap-1">
                 <AlertCircle className="h-3 w-3" />
                 {errors.message.message}
               </p>
@@ -198,7 +198,7 @@ const ContactForm = () => {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-primary hover:shadow-glow transform hover:scale-105 transition-all duration-300"
+            className="w-full bg-gradient-primary-glow hover:shadow-xl hover:scale-105 rounded-xl transition-all duration-300"
             size="lg"
           >
             {isSubmitting ? (

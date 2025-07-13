@@ -107,33 +107,28 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-gradient-subtle relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-gradient-subtle relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-secondary rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 md:w-64 md:h-64 bg-primary rounded-full mix-blend-multiply filter blur-xl"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 md:w-80 md:h-80 bg-secondary rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-20 animate-fade-up">
-          <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full border border-primary/20 mb-6">
-            🚀 Comprehensive Financial Solutions
-          </div>
-          <h2 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-            Services That Drive
-            <span className="text-transparent bg-clip-text bg-gradient-primary block">Your Success</span>
+      <div className="w-[95%] max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-12 md:mb-16 animate-fade-up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
+            Our Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From bookkeeping to cross-border tax filing, we provide the expertise 
-            and reliability your business needs to thrive in today's competitive market.
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+            Professional bookkeeping, payroll, and tax solutions for businesses across Canada and the U.S.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className="glass-card shadow-floating hover-lift group relative overflow-hidden animate-fade-up"
+              className="glass-professional hover:border-primary/50 transition-all duration-300 group relative overflow-hidden animate-fade-up rounded-xl hover-lift"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {service.highlight && (
@@ -143,65 +138,56 @@ const Services = () => {
               )}
               
               <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="h-6 w-6 text-white" />
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-primary rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                  <service.icon className="h-4 w-4 md:h-5 md:w-5 text-white" />
                 </div>
-                <CardTitle className="text-xl text-card-foreground group-hover:text-primary transition-colors">
+                <CardTitle className="text-base md:text-lg text-card-foreground">
                   {service.title}
                 </CardTitle>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-xs md:text-sm">
                   {service.description}
                 </p>
               </CardHeader>
               
               <CardContent>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 md:space-y-3">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm">
-                      <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm">
+                      <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                
-                <Button 
-                  onClick={openCalendly}
-                  variant="outline" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-                >
-                  Get Started
-                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
         {/* Benefits Section */}
-        <div className="glass-card rounded-3xl p-8 lg:p-12 shadow-floating animate-fade-up">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-card-foreground mb-4">
-              Why Choose DB Bookkeeping & Tax Services?
+        <div className="glass-professional rounded-xl p-6 md:p-8 lg:p-12 animate-fade-up">
+          <div className="text-center mb-6 md:mb-8">
+            <h3 className="text-xl md:text-2xl font-bold text-card-foreground mb-3 md:mb-4">
+              Why Choose Us?
             </h3>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Experience the difference of working with dedicated professionals who understand your unique needs.
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
+              Professional, reliable, and tailored to your success.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
             {benefits.map((benefit, index) => (
               <div 
                 key={benefit.title}
-                className="text-center group animate-scale-in"
+                className="text-center"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="h-8 w-8 text-white" />
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <benefit.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-card-foreground mb-2">
+                <h4 className="text-sm md:text-base font-semibold text-card-foreground mb-2">
                   {benefit.title}
                 </h4>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-xs md:text-sm">
                   {benefit.description}
                 </p>
               </div>
@@ -211,12 +197,11 @@ const Services = () => {
           <div className="text-center">
             <Button 
               onClick={openCalendly}
-              variant="cta" 
               size="lg"
-              className="text-lg px-12 py-6 hover-lift"
+              className="bg-gradient-primary-glow text-primary-foreground hover:shadow-xl hover:scale-105 rounded-xl transition-all duration-300"
             >
-              Book Your Free Consultation Today
-              <ArrowRight className="h-5 w-5 ml-2" />
+              Book Free Consultation
+              <ArrowRight className="h-4 w-4 ml-2" />
             </Button>
           </div>
         </div>
