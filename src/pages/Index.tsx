@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
-import TechStack from "@/components/TechStack";
 
 const Index = () => {
   return (
@@ -11,7 +10,6 @@ const Index = () => {
       <Hero />
       <Services />
       <Contact />
-      <TechStack />
     </div>
   );
 };

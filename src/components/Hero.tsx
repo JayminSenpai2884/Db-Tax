@@ -3,8 +3,19 @@ import { Calendar, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-finance.jpg";
 
 const Hero = () => {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const openCalendly = () => {
+    window.open('https://calendly.com/dbbookstax', '_blank');
+  };
+
   return (
-    <section className="relative bg-gradient-subtle py-20 lg:py-32">
+    <section className="relative bg-gradient-subtle pt-32 pb-20 lg:pt-40 lg:pb-32">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -20,11 +31,11 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="cta" size="lg" className="text-lg px-8 py-6">
+              <Button onClick={openCalendly} variant="cta" size="lg" className="text-lg px-8 py-6">
                 <Calendar className="h-5 w-5" />
                 Schedule Consultation
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+              <Button onClick={scrollToServices} variant="outline" size="lg" className="text-lg px-8 py-6">
                 View Services
               </Button>
             </div>

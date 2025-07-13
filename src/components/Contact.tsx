@@ -98,7 +98,12 @@ const Contact = () => {
                 Book an appointment online through our embedded scheduling system. 
                 We'll discuss your needs and create a customized solution for your business.
               </p>
-              <Button variant="cta" size="lg" className="text-lg px-8 py-6">
+              <Button 
+                onClick={() => window.open('https://calendly.com/dbbookstax', '_blank')}
+                variant="cta" 
+                size="lg" 
+                className="text-lg px-8 py-6"
+              >
                 <Calendar className="h-5 w-5" />
                 Book Appointment Online
               </Button>
