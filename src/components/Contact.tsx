@@ -5,7 +5,7 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-hero-rich relative overflow-hidden">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-transparent">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 md:w-72 md:h-72 bg-white rounded-full mix-blend-multiply filter blur-xl"></div>
@@ -25,57 +25,81 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Contact Information */}
           <div className="space-y-4 md:space-y-6 animate-slide-in-left">
-            <Card className="glass-professional rounded-xl">
+            <Card className="bg-white/5 dark:bg-white/5 border border-white/10 rounded-xl shadow-lg backdrop-blur-md hover:bg-white/10 hover:scale-102 transition-all duration-300 font-semibold">
               <CardHeader>
-                <CardTitle className="text-lg md:text-xl text-card-foreground flex items-center gap-2 md:gap-3">
-                  <Phone className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <CardTitle className="text-base md:text-lg text-white flex items-center gap-2 md:gap-3 drop-shadow-lg">
+                  <div className="w-5 h-5 md:w-6 md:h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="text-primary text-xs font-bold">J</span>
+                  </div>
+                  About Me
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-white/80 text-xs md:text-sm drop-shadow-md">
+                  <p className="leading-relaxed">
+                    Certified tax professional with expertise in cross-border bookkeeping and compliance. 
+                    Dedicated to helping businesses thrive through accurate financial management.
+                  </p>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Certified</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">5+ Years</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Bilingual</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/5 dark:bg-white/5 border border-white/10 rounded-xl shadow-lg backdrop-blur-md hover:bg-white/10 hover:scale-102 transition-all duration-300 font-semibold">
+              <CardHeader>
+                <CardTitle className="text-lg md:text-xl text-white flex items-center gap-2 md:gap-3 drop-shadow-lg">
+                  <Phone className="h-5 w-5 md:h-6 md:w-6 text-primary drop-shadow-glass" />
                   Contact Information
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 md:space-y-4">
                 <div className="space-y-2 md:space-y-3">
                   <div className="flex items-center space-x-2 md:space-x-3 p-2 rounded-lg">
-                    <div className="w-6 h-6 md:w-8 md:h-8 bg-primary rounded-lg flex items-center justify-center">
-                      <Phone className="h-3 w-3 md:h-4 md:w-4 text-white" />
+                    <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Phone className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-card-foreground text-xs md:text-sm">Phone</p>
-                      <p className="text-muted-foreground text-sm md:text-base">647-896-7487</p>
+                      <p className="font-medium text-white text-xs md:text-sm drop-shadow-md">Phone</p>
+                      <p className="text-white/80 text-sm md:text-base drop-shadow-md">647-896-7487</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-2 md:space-x-3 p-2 rounded-lg">
-                    <div className="w-6 h-6 md:w-8 md:h-8 bg-primary rounded-lg flex items-center justify-center">
-                      <Mail className="h-3 w-3 md:h-4 md:w-4 text-white" />
+                    <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Mail className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-card-foreground text-xs md:text-sm">Email</p>
-                      <p className="text-muted-foreground text-sm md:text-base">dbbookstax@gmail.com</p>
+                      <p className="font-medium text-white text-xs md:text-sm drop-shadow-md">Email</p>
+                      <p className="text-white/80 text-sm md:text-base drop-shadow-md">dbbookstax@gmail.com</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-2 md:space-x-3 p-2 rounded-lg">
-                    <div className="w-6 h-6 md:w-8 md:h-8 bg-primary rounded-lg flex items-center justify-center">
-                      <MapPin className="h-3 w-3 md:h-4 md:w-4 text-white" />
+                    <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <MapPin className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-card-foreground text-xs md:text-sm">Service Areas</p>
-                      <p className="text-muted-foreground text-sm md:text-base">Canada & United States</p>
+                      <p className="font-medium text-white text-xs md:text-sm drop-shadow-md">Service Areas</p>
+                      <p className="text-white/80 text-sm md:text-base drop-shadow-md">Canada & United States</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
             
-            <Card className="glass-professional rounded-xl">
+            <Card className="bg-white/5 dark:bg-white/5 border border-white/10 rounded-xl shadow-lg backdrop-blur-md hover:bg-white/10 hover:scale-102 transition-all duration-300 font-semibold">
               <CardHeader>
-                <CardTitle className="text-base md:text-lg text-card-foreground flex items-center gap-2 md:gap-3">
-                  <Clock className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+                <CardTitle className="text-base md:text-lg text-white flex items-center gap-2 md:gap-3 drop-shadow-lg">
+                  <Clock className="h-5 w-5 md:h-6 md:w-6 text-primary drop-shadow-glass" />
                   Business Hours
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-1 md:space-y-2 text-muted-foreground text-xs md:text-sm">
+                <div className="space-y-1 md:space-y-2 text-white/80 text-xs md:text-sm drop-shadow-md">
                   <div className="flex justify-between items-center py-1">
                     <span className="font-medium">Monday - Friday</span>
                     <span>9:00 AM - 6:00 PM EST</span>
@@ -91,8 +115,6 @@ const Contact = () => {
                 </div>
               </CardContent>
             </Card>
-
-
           </div>
           
           {/* Contact Form */}
